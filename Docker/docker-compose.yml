@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+   fvtt:
+        build:
+            context: ./
+            dockerfile: ./Dockerfile
+            args:
+                UID: 1026
+                GUID: 65534
+        image: fvtt:1.11.0            
+        container_name: FoudryVTT
+        ports:
+            - "30000:30000"
+        restart: always
