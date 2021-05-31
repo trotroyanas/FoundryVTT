@@ -2,14 +2,13 @@ version: '3.3'
 
 services:
    fvtt:
+        container_name: Fvtt
         build:
             context: ./
             dockerfile: ./Dockerfile
-            args:
-                UID: 1026
-                GUID: 65534
-        image: fvtt:1.11.0            
-        container_name: FoudryVTT
+        image: fvtt:3.0
+        volumes:
+          - /data/your/folder/app:/home/foundry/fvtt
+          - /data/your/folder/data:/home/foundry/fvttdata
         ports:
             - "30000:30000"
-        restart: always
